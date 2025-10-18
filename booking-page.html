@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Booking Confirmation</h1>
+    </header>
+
+    <div class="container">
+        <h2>Enter Your Details</h2>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name (e.g., Juan Dela Cruz)">
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label>Location:</label>
+            <select id="location">
+                <option>Barangay 1</option>
+                <option>Barangay 2</option>
+                <option>Barangay 3</option>
+                <option>Barangay 4</option>
+                <option>Barangay 5</option>
+                <option>Barangay 6</option>
+                <option>Barangay 7</option>
+                <option>Barangay 8</option>
+                <option>Barangay Payompon</option>
+                <option>Barangay Tayamaan</option>
+                <option>Barangay Tangkalan</option>
+                <option>Barangay Fatima</option>
+                <option>Barangay Casoy</option>
+                <option>Barangay Balansay</option>
+                <option>Barangay San Luis</option>
+                <option>Barangay Talabaan</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Contact Number:</label>
+            <input type="text" id="contact" placeholder="Enter your contact number">
+        </div>
+        <div class="form-group">
+            <label>Choose Driver:</label>
+            <select id="driver-select">
+                <option>Jerry Magramo</option>
+                <option>Alexander Capillo</option>
+                <option>Nolasco Nutanawan</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox" id="terms"> I agree to the <a href="#" onclick="openTermsModal()">Terms and
+                    Privacy Policy</a></label>
+        </div>
+
+        <button onclick="confirmBooking()">Confirm Booking</button>
+        <p id="message" class="success"></p>
+    </div>
+
+    <!-- Modal for booking confirmation -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Booking Confirmed!</h2>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <!-- Modal for Terms and Privacy Policy -->
+    <div id="termsModal" class="termsModal">
+        <div class="termsModal-content">
+            <span class="close" onclick="closeTermsModal()">&times;</span>
+            <h2>Terms and Privacy Policy</h2>
+            <div class="terms-text">
+                <p>Welcome to the MambuRide. This Website is provided solely to assist customers
+                    in gathering bus/ferry schedules and information on routes, and related services, making legitimate
+                    reservations or otherwise transacting business with bus and ferry companies, and for no other
+                    purposes.</p>
+                <p>This Website is offered to you conditioned upon your acceptance without modification of all the terms, conditions, and notices
+                    set forth below, the Privacy Policy and the Cookie Policy and other notices, terms and conditions
+                    indicated during the booking process, as each of them may be amended from time to time.</p>
+                <p>Please read the Terms of Use carefully. By accessing or using this Website in any way, you agree that
+                    the Terms of Use then in force shall apply.</p>
+                <p>If you do not agree to the Terms of Use, please do not use or make reservations or bookings through
+                    this Website. MambuRide may at any time change these Terms of Use and your continued use of this
+                    Website is conditioned upon acceptance of the updated Terms of Use.</p>
+                <h3>USE OF THE WEBSITE</h3>
+                <p>As a condition of your use of this Website, you warrant that</p>
+                <p>(i) you are at least 18 years of age;</p>
+                <p>(ii) you possess the legal authority to create a binding legal obligation;</p>
+                <p>(iii) you will use this Website in accordance with these Terms of Use;</p>
+                <p>(iv) you will only use this Website to make legitimate reservations or purchases for you or for
+                    another person for whom you are legally authorized to act;</p>
+                <p>(v) you will inform such other persons about the Terms of Use that apply to the reservations or
+                    purchases you have made on their behalf, including all rules and restrictions applicable thereto;
+                </p>
+                <p>(vi) all information supplied by you on this Website is accurate, current and complete, to the best
+                    of our knowledge and</p>
+                <p>(vii) you will safeguard your account information and will supervise and be completely responsible for any use of your information by you and anyone other than
+                    you. We retain the right at our sole discretion to deny access to anyone to this Website and the
+                    services we offer, at any time and for any reason, including, but not limited to, for violation of
+                    these Terms of Use.</p>
+                <h3>IMPORTANT POINTS</h3>
+                <p>MambuRide is ONLY a bus/ferry ticket agent. It does not operate bus/ferry services of its own. In
+                    order to provide a comprehensive choice of bus/ferry operators, departure times and prices to
+                    customers, it has tied up with many bus/ferry operators. MambuRide strongly advises you to choose
+                    bus/ferry operators you are aware of and whose service you are comfortable with.</p>
+                <p>MambuRide's responsibilities are limited to:</p>
+                <ul>
+                    <li>Issuing a valid reservation voucher you which will print and surrender to the bus/ferry operator
+                        in the terminal address indicated in the voucher, in exchange for a ticket that will be issued
+                        by the bus/ferry operator, upon their verification of your reservation</li>
+                    <li>Providing rebooking, refund and support in the event of cancellations initiated by the bus/ferry
+                        company.</li>
+                    <li>Providing rebooking, refund and support as requested by you, but only for the bus/ferry
+                        operators that allow passenger initiated rebooking and/or refund.</li>
+                    <li>Providing limited customer support and information in case of any delays / inconvenience</li>
+                </ul>
+                <p>MambuRide's responsibilities DO NOT include:</p>
+                <ul>
+                    <li>The bus/ferry operator’s bus not departing / arriving on time</li>
+                    <li>The bus/ferry operator’s employees conduct and/or competence or the lack or absence thereof</li>
+                    <li>The bus/ferry operator’s seats etc., not being up to your expectations</li>
+                    <li>The bus/ferry operator canceling or rescheduling the trip for whatever reason</li>
+                    <li>Any injury or damage to you and/or your properties</li>
+                    <li>Your baggage or other properties getting lost / stolen / damaged</li>
+                    <li>The bus/ferry operator changing your seat at the last minute or changing the type of bus and
+                        type of seat and accommodations on the bus that will transport you</li>
+                    <li>Your waiting at the wrong boarding point (please call the bus/ferry operator to find out the
+                        exact boarding point if you are not a regular traveler on that particular bus)</li>
+                    <li>The bus/ferry operator changing the boarding point and/or using a pick-up vehicle at the
+                        boarding point to take you to the bus departure point</li>
+                </ul>
+                <p>The departure/arrival times mentioned on the ticket and website may change on certain days due to
+                    unavoidable situations such as heavy traffic or vehicle breakdown. The bus/ferry operator has the
+                    last say on the actual arrival and departure times for the bus, the route to be taken and the actual
+                    arrival and departure points, and any stops in between.</p>
+                <p>Tickets or reservations paid by you and received by MambuRide will be refunded to you upon your
+                    request where:</p>
+                <p>(a) the refund is sought following the occurrence of bus/ferry journey cancellations and route
+                    suspensions for reasons other than (i) safety and security reasons (as determined by the bus
+                    company), or when justified by circumstances beyond the bus/ferry company’s or MambuRide's control
+                    or (ii) delays or diversions in the journey;or</p>
+                <p>(b) you are not allowed or failed to board the bus/ferry for reasons other than his non-observance of
+                    these Terms and Conditions or the policies or terms and conditions of carriage imposed by the bus
+                    company or by any applicable law or regulation.</p>
+                <p>(c) refunds is allowed by the policy of the bus/ferry company.</p>
+                <p>Any and all refunds will be subject to MambuRide's refund policies and process in force at the time
+                    of the request, including the forfeiture of an amount corresponding to MambuRide's
+                    refund/cancellation fees and payment gateway fees.. Please note that the refund/cancellation fee and
+                    refund period may differ from one bus/ferry operator to another.</p>
+                <p>In case a booking confirmation/VOUCHER sent via e-mail and notified via sms, gets delayed or fails to
+                    deliver because of technical reasons or as a result of incorrect e-mail ID / phone number provided
+                    by the user etc, a ticket will be considered 'booked' as long as the reservation is tagged by the
+                    system as PAID.</p>
+                <h3>COMMUNICATION POLICY</h3>
+                <p>By accepting these terms and conditions, you accept and agree that MambuRide may send the alerts
+                    and notifications and updates to the email and Philippine mobile phone number provided by you during
+                    the registration process for MambuRide's service. You acknowledge that the alerts and
+                    notifications will be received only if you have internet connection and the Philippine mobile phone
+                    is in ‘On’ mode to receive the SMS. If the mobile phone is in ‘Off’’ mode and/or you have no or
+                    intermittent internet connection, then you may not get the notifications on time or not receive them
+                    at all.</p>
+                <p>MambuRide will exert efforts to provide the service and it shall be deemed that you shall have
+                    received the information sent from MambuRide as an alert on the email and Philippine mobile phone
+                    number provided during the course of booking and MambuRide shall not be under any obligation to
+                    confirm the authenticity of the person(s) receiving the alert. You cannot hold MambuRide liable
+                    for non-availability of the service in any manner whatsoever.</p>
+                <p>You acknowledge that the email and SMS service provided by MambuRide is an additional facility
+                    provided for the customer’s convenience, that the email and SMS service is highly dependent on the
+                    telecommunications service providers, their networks and their intraconnectivity and
+                    interconnectivity, and that the email and SMS service may be susceptible to delayed deliveries,
+                    non-deliveries, misdeliveries, errors, omissions and/ or inaccuracies.</p>
+                <p>In the event you observe any error, omission and/or inaccuracy in the information provided in the
+                    alert, you should immediately inform MambuRide about the same and MambuRide will exert efforts
+                    to rectify the error, omission and/or inaccuracy as soon as practicable. You will not hold
+                    MambuRide liable for any loss, damages, claim, expense including legal cost that may be incurred/
+                    suffered by you on account of the email and SMS service (including, without limitation, any delayed
+                    deliveries, non-deliveries, misdeliveries, errors, omissions and/ or inaccuracies).</p>
+                <p>You agree to indemnify and hold harmless MambuRide and the email and SMS service provider including
+                    its stockholders, directors, officials and employees from any damages, claims, demands, proceedings,
+                    loss, cost, charges and expenses whatsoever including legal charges and attorney fees which
+                    MambuRide and the email and SMS service provider may at any time incur, sustain, suffer or be put
+                    to as a consequence of or arising out of:</p>
+                <p>(i) misuse, improper or fraudulent information provided by you,</p>
+                <p>(ii) your provision of an incorrect email and number or an email and number that belongs to that of
+                    an unrelated third party, and/or</p>
+                <p>(iii) your receiving any message relating to the reservation number, travel itinerary information,
+                    booking confirmation, modification to a ticket, cancellation of ticket, change in bus schedule,
+                    delay, and/or rescheduling from MambuRide and/or the email and SMS service provider.</p>
+                <p>By accepting the terms and conditions the customer acknowledges and agrees that MambuRide may call
+                    the mobile phone number provided by the customer while registering for the service or to any such
+                    number replaced and informed by the customer, for the purpose of collecting feedback from the
+                    customer regarding their travel, the bus facilities and/or services of the bus operator.</p>
+                <p>Grievances and claims related to the bus/ferry journey should be reported to MambuRide support team
+                    within 10 days of the customer’s travel date.</p>
+                <p>For payment related issues and concerns, contact MambuRide at support@mamburide.com.ph. If your
+                    case merits a refund, you will be given a full or partial refund, depending on the case. Do not file
+                    a complaint with your bank or payment gateway until MambuRide representatives have exhausted all
+                    means to resolve your case. There are charges and administrative costs associated when you file a
+                    complaint to the bank or payment gateway. As such you will be charged a fine of P15,000 plus legal
+                    actions against you, for every unreasonable dispute that you file.</p>
+                <h3>LIMITATION OF LIABILITY</h3>
+                <p>You accept that MambuRide only acts as an interface between you and the bus / ferry operator, and
+                    that MambuRide will under no circumstances be held liable with respect to services you have booked
+                    with one or more bus / ferry operators. MambuRide is not liable if and insofar as you able to
+                    claim for damages under an insurance policy such as, but not limited to, travel and/or holiday
+                    cancellation insurance. In any event, MambuRide</p>
+                <p>The information displayed on this Website has been provided by the respective bus / ferry operators,
+                    and MambuRide does not accept any liability for any inaccuracies. You must ensure that they verify
+                    all information given before booking.</p>
+                <p>Except as expressly set out in these Terms and Conditions, all the information contained in this
+                    Website is provided without any warranty (either express or implied) or implied term of any kind,
+                    including but not limited to any implied warranties or implied terms of satisfactory quality,
+                    fitness for a particular purpose or non-infringement. All such implied terms and warranties are
+                    excluded.</p>
+                <p>BY ACCESSING THIS WEBSITE, YOU AGREE THAT MAMBURIDE WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND,
+                    INCLUDING WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, AND CONSEQUENTIAL DAMAGES
+                    (SUCH AS, BUT NOT LIMITED TO, LOSS OF BOOKINGS, PROFITS, REVENUE, CONTRACTS, ANTICIPATED SAVINGS,
+                    DATA, GOODWILL OR WASTED EXPENDITURE), ARISING OUT OF OR IN CONNECTION WITH THE TERMS, WEBSITE,
+                    FACILITY, TRANSACTION PROCESSING SERVICE, INABILITY TO USE THE FACILITY OR THE TRANSACTION
+                    PROCESSING SERVICE, OR THOSE RESULTING FROM ANY FACILITY PURCHASED OR OBTAINED OR MESSAGES RECEIVED
+                    OR TRANSACTIONS ENTERED INTO THROUGH THE WEBSITE, OR ANY DELAY OR INABILITY TO BOARD THE RELEVANT
+                    TRANSPORT, OR ANY DELAY OR INABILITY TO COMPLETE THE BOOKED TRAVEL, OR FROM YOUR USE OF LINKS FROM
+                    THE WEBSITE, BEYOND THE VALUE OF THE SUBJECT TRANSACTION CARRIED OUT BY YOU THROUGH THE WEBSITE.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f4c0f; /* Dark green background */
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #1a5a1a; /* Darker green header */
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #228B22; /* Forest green border */
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #2d4a2d; /* Medium dark green container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ccc;
+  white-space: nowrap; /* Ensures the label (including checkbox and link) stays on one line */
+  text-align: center; /* Centers the checkbox and text horizontally within the container */
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  background-color: #3d5a3d; /* Slightly lighter green for inputs */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #228B22; /* Forest green button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #32CD32; /* Lime green on hover */
+}
+
+.trip-type {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+
+.drivers {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.driver {
+  background-color: #1e3a1e; /* Dark green driver cards */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 8px rgba(34, 139, 34, 0.2); /* Subtle green shadow */
+}
+
+.driver h4 {
+  margin: 0;
+  color: #32CD32; /* Lime green for driver names */
+}
+
+.success {
+  text-align: center;
+  color: #90EE90; /* Light green for success */
+  margin-top: 15px;
+}
+
+/* Link styles for Terms and Privacy Policy */
+a {
+  color: #32CD32; /* Lime green for visibility on dark background */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #90EE90; /* Lighter green on hover */
+}
+
+/* Modal styles for booking confirmation */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #2d4a2d; /* Match container green */
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #228B22;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  color: #fff;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+/* Modal styles for Terms and Privacy Policy */
+.termsModal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent background scrolling */
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.termsModal-content {
+  background-color: #2d4a2d; /* Match container green */
+  margin: 2% auto; /* Better centering and more space */
+  padding: 20px;
+  border: 1px solid #228B22;
+  width: 90%;
+  max-width: 600px; /* Wider for readability */
+  max-height: 75vh; /* Increased height for more content */
+  overflow-y: auto; /* Scroll vertically if needed */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  border-radius: 10px;
+  color: #fff;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.terms-text {
+  line-height: 1.6; /* Better readability */
+  word-wrap: break-word; /* Prevent long words from overflowing */
+}
+
+.terms-text h3 {
+  color: #32CD32; /* Lime green for headings */
+  margin-top: 20px;
+}
+
+.terms-text ul {
+  margin-left: 20px;
+}
